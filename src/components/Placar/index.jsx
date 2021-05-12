@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import EndGame from "../EndGamer/index";
+import { useEffect } from "react";
 
-const resetGamer = (setUsePonto, setCompPonto) => {
-  setUsePonto(0);
-  setCompPonto(0);
-};
-
-const Placar = ({ optionUse, optionComputer, selectionUser }) => {
-  const [usePonto, setUsePonto] = useState(0);
-  const [compPonto, setCompPonto] = useState(0);
-
+const Placar = ({
+  optionUse,
+  optionComputer,
+  selectionUser,
+  usePonto,
+  setUsePonto,
+  compPonto,
+  setCompPonto,
+}) => {
   useEffect(() => {
     if (optionUse === "Pedra" && optionComputer === "Papel") {
       setCompPonto(compPonto + 1);
@@ -36,15 +35,6 @@ const Placar = ({ optionUse, optionComputer, selectionUser }) => {
         <p>Computer</p>
         <p>{compPonto}</p>
       </div>
-      {usePonto === 10 || compPonto === 10 ? (
-        <EndGame
-          resetGamer={resetGamer}
-          setUsePonto={setUsePonto}
-          setCompPonto={setCompPonto}
-        ></EndGame>
-      ) : (
-        ""
-      )}
     </div>
   );
 };
