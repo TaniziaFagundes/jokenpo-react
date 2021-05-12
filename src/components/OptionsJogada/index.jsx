@@ -2,31 +2,31 @@ import { useState, useEffect } from "react";
 import Jogada from "../Jogada/index";
 import Placar from "../Placar/index";
 
-const computer = (options) => {
-  const result = options[Math.floor(Math.random() * options.length)];
-  return result;
+const computer = (options, setOptionComputer) => {
+  const optionComputer = options[Math.floor(Math.random() * options.length)];
+  setOptionComputer(optionComputer);
 };
 
 const OptionsJogada = () => {
   const options = ["Pedra", "Papel", "Tesoura"];
   const [optionComputer, setOptionComputer] = useState("");
   const [optionUse, setOptionUse] = useState("");
-  const [aux, setAux] = useState(false);
+  const [selectionUser, setselectionUser] = useState(false);
 
   return (
     <>
       <Placar
         optionUse={optionUse}
         optionComputer={optionComputer}
-        aux={aux}
+        selectionUser={selectionUser}
       ></Placar>
       <Jogada optionUse={optionUse} optionComputer={optionComputer}></Jogada>
       <div>
         <button
           onClick={() => {
             setOptionUse("Pedra");
-            setOptionComputer(computer(options));
-            setAux({ aux: !aux });
+            computer(options, setOptionComputer);
+            setselectionUser({ selectionUser: !selectionUser });
           }}
         >
           Pedra
@@ -34,8 +34,8 @@ const OptionsJogada = () => {
         <button
           onClick={() => {
             setOptionUse("Papel");
-            setOptionComputer(computer(options));
-            setAux({ aux: !aux });
+            computer(options, setOptionComputer);
+            setselectionUser({ selectionUser: !selectionUser });
           }}
         >
           Papel
@@ -43,8 +43,8 @@ const OptionsJogada = () => {
         <button
           onClick={() => {
             setOptionUse("Tesoura");
-            setOptionComputer(computer(options));
-            setAux({ aux: !aux });
+            computer(options, setOptionComputer);
+            setselectionUser({ selectionUser: !selectionUser });
           }}
         >
           Tesoura

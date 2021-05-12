@@ -1,8 +1,10 @@
-const EndGame = ({ resetGamer }) => {
+const EndGame = ({ resetGamer, setUsePonto, setCompPonto }) => {
   return (
     <div>
       <h4>Fim de Jogo</h4>
-      <button onClick={() => resetGamer}></button>
+      <button onClick={() => resetGamer(setUsePonto, setCompPonto)}>
+        Jogar Novamente
+      </button>
     </div>
   );
 };
