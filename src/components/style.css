@@ -1,0 +1,40 @@
+.container {
+  margin: 10px;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.pontuacao {
+  margin: 40px;
+}
+
+p {
+  margin: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-style: none;
+  font-weight: bold;
+}
+
+.novoJogo {
+  background-color: rgb(42, 129, 42);
+  color: white;
+}
+
+.novoJogo:hover {
+  background-color: rgb(87, 151, 87);
+  padding: 15px 20px;
+}

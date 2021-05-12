@@ -26,12 +26,12 @@ const Placar = ({
   }, [selectionUser]);
 
   return (
-    <div>
-      <div>
-        <p>User</p>
+    <div className="container flex-row">
+      <div className="pontuacao">
+        <p>Jogador</p>
         <p>{usePonto}</p>
       </div>
-      <div>
+      <div className="pontuacao">
         <p>Computer</p>
         <p>{compPonto}</p>
       </div>

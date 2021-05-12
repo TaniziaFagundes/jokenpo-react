@@ -1,5 +1,5 @@
 import "./App.css";
-
+import "./components/style.css";
 import OptionsJogada from "./components/OptionsJogada/";
 
 function App() {
